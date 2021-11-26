@@ -1,0 +1,40 @@
+<idea-plugin>
+    <id>org.jetbrains.corda</id>
+    <name>Corda</name>
+    <version>0.0.1</version>
+    <vendor email="None" url="None">VN</vendor>
+
+    <description><![CDATA[
+      The plugin provides tools for developing <b>CorDapp</b>> on the Corda platform.
+      It's install by offline mode.
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Release 0.0.1: Initial release.<br>
+      Implement a lot of core function support develop Corda platform.
+    ]]>
+    </change-notes>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>org.jetbrains.plugins.terminal</depends>
+    <depends>com.intellij.modules.java</depends>
+<!--    <depends>com.intellij.javafx</depends>-->
+    <depends>com.jetbrains.sh</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="net.corda.intellij.services.StartupService"/>
+        <moduleType id="Corda" implementationClass="net.corda.intellij.modules.CustomModuleType"/>
+        <projectService serviceImplementation="net.corda.intellij.settings.CordaSettings"/>
+        <toolWindow id="Corda" icon="/icons/tooling.png" anchor="right"
+                    factoryClass="net.corda.intellij.ui.CustomToolWindowFactory"/>
+        <projectTemplatesFactory implementation="net.corda.intellij.services.project.CustomProjectTemplateFactory"/>
+        <localInspection
+                language="JAVA"
+                level="WARNING"
+                enabledByDefault="true"
+                bundle="messages.MessageBundle"
+                key="inspection.corda.code"
+                groupKey="inspection.group.name"
+                implementationClass="net.corda.intellij.inspection.CordaCodeInspection"/>
+    </extensions>
+</idea-plugin>
