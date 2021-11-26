@@ -1,0 +1,48 @@
+<html lang="en">
+<body>
+<p>
+    @BelongsToContract annotation is used to map state classes to their contacts. The linter should show warning for missing @BelongsToContract annotation is State classes.
+</p>
+<p>
+    Missing getters in State.
+</p>
+<p>
+    Missing parameterized constructor in State.
+</p>
+<p>
+    In case of multiple constructor in state class, one of them should be annotated with @ConstructorForDeserialization. A warning should be shown if the annotation is missing and the class has multiple constructor.
+</p>
+<p>
+    Warning for Non-immutatable fields in Flows and States. Fields should be final.
+<p>
+    In case if contracts have multiple commands, warning to be shown if separate methods are not implemented for each command verification.
+</p>
+<p>
+    Contract should consists an ID field – It is required in test cases.
+</p>
+<p>
+    The Contract ID field should match the package name.
+</p>
+<p>
+    Warning for missing @Suspendable annotation in Flows call method.
+</p>
+<p>
+    Missing participant session in Finality flow.
+</p>
+<p>
+    Missing Self signature.
+</p>
+<p>
+    Warning on default selection from a list. Ex: Notary selection where the first notary is selected from the network-map cache.
+</p>
+<p>
+    Missing participant session in Finality flow.
+</p>
+<p>
+    Warning if flow session send-receive is mismatched or missing.
+</p>
+<p>
+    Flow test requires configuration for corDapp, its configured in the setup section in test cases. Warning if incorrect package is used.
+</p>
+</body>
+</html>
